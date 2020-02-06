@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "830829126737",
+    "firebase_url": "https://daily-amajo.firebaseio.com",
+    "project_id": "daily-amajo",
+    "storage_bucket": "daily-amajo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830829126737:android:c170fb5b64392d589cc470",
+        "android_client_info": {
+          "package_name": "com.example.daily_amajo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830829126737-r9tfb4de5o9ehejdgnvoftre307bij5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBccFSL7XfTSlvzjqL5SYY8EPTYQDPfxpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830829126737-r9tfb4de5o9ehejdgnvoftre307bij5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
