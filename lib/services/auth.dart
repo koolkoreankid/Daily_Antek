@@ -56,7 +56,7 @@ class AuthService {
       FirebaseUser user = result.user;
 
       // create document and path
-      await DatabaseService(uid: user.uid).updateUserData(userName, 1, 5, "defualt");
+      await DatabaseService(uid: user.uid).updateUserData(userName, 1, 5, "defualt", 0);
       return _userFromFirebaseUser(user);
     } catch (error) {
       print(error.toString());

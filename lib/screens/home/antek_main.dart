@@ -64,18 +64,15 @@ class _AntekListState extends State<AntekMain> {
                             FlatButton(
                               child: Text("Quotes"),
                               color: Colors.blue[200],
-                              onPressed: () {},
+                              onPressed: () {
+                                
+                              },
                             ),
                             SizedBox(height: 30),
                             FlatButton(
                               child: Text("update"),
                               color: Colors.blue[200],
-                              onPressed: () {
-                                setState(() {
-                                  _imageUrl = userData.imageStatus();
-                                  print(_imageUrl);
-                                });
-                              },
+                              onPressed: () {},
                             ),
                           ],
                         ),
@@ -153,11 +150,11 @@ class _AntekListState extends State<AntekMain> {
                                       ));
                               await DatabaseService(uid: user.uid)
                                   .updateUserData(userData.userName, userData.level = 1,
-                                      userData.points - 1, userData.mood);
+                                      userData.points - 1, userData.mood, userData.quoteNum);
                             } else {
                               await DatabaseService(uid: user.uid)
                                   .updateUserData(userData.userName, userData.level + 1,
-                                      userData.points - 1, userData.mood);
+                                      userData.points - 1, userData.mood, userData.quoteNum);
                             }
                           }
 

@@ -60,8 +60,13 @@ flutter:
    - assets/images/antek_cum.png
    - assets/images/antek_trig.gif
    - assets/images/antek_harrased.png
+   - assets/images/antek_excited.jpg
+   - assets/images/antek_jumpscare.jpg
+   - assets/images/antek_naked.jpg
+   - assets/images/antek_stare.jpg
    - assets/texts/AntekQuotes.txt
    - assets/texts/single.txt
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

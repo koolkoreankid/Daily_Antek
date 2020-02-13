@@ -1,4 +1,5 @@
 import 'package:daily_amajo/screens/authenticate/authenticate_screen.dart';
+import 'package:daily_amajo/screens/home/point_screen.dart';
 import 'package:daily_amajo/screens/home/profile_screen.dart';
 import 'package:daily_amajo/screens/wrapper.dart';
 import 'package:flutter/material.dart';
@@ -15,16 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // <User> is the type of model that will be passed
-    return StreamProvider<User>.value(
+    return MultiProvider(
+      providers: [StreamProvider.value(value: AuthService().user),
+                  Provider.value(value: UserData()),
+                  
+      ],
       // this user value will be passed on when updated
-      value: AuthService().user,
+
       child: MaterialApp(
         home: Wrapper(),
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
           CommunityScreen.routeName: (ctx) => CommunityScreen(),
           AuthenticateScreen.routeName: (ctx) => AuthenticateScreen(),
-          ProfileScreen.routeName: (ctx) => ProfileScreen()
+          ProfileScreen.routeName: (ctx) => ProfileScreen(),
+          PointScreen.routeName: (ctx) => PointScreen(),
         },
       ),
     );

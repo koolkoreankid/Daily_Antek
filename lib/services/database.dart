@@ -9,13 +9,14 @@ class DatabaseService {
   final CollectionReference antekCollection =
       Firestore.instance.collection('antek');
 
-  Future updateUserData(String userName, int level, int points, String mood) async {
+  Future updateUserData(String userName, int level, int points, String mood, int quoteNum) async {
     // if the document does not exist, create
     return await antekCollection.document(uid).setData({
       'userName': userName,
       'level': level,
       'points': points,
       'mood': mood,
+      'quoteNum': quoteNum,
     });
   }
 
@@ -29,6 +30,7 @@ class DatabaseService {
         level: doc.data['level'] ?? 1,
         points: doc.data["points"] ?? 5,
         mood: doc.data["mood"] ?? "default",
+        quoteNum: doc.data["quoteNum"] ?? 0,
       );
     }).toList();
   }
@@ -41,6 +43,7 @@ class DatabaseService {
       level: snapshot.data['level'],
       points: snapshot.data['points'],
       mood: snapshot.data['mood'],
+      quoteNum: snapshot.data['quoteNum']
     );
   }
 

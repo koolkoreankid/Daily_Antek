@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:async';
+import 'package:provider/provider.dart';
+import 'package:daily_amajo/models/user.dart';
 
 class EncyclopediaScreen extends StatefulWidget {
   static const routeName = "/pointShop";
+
   @override
   _EncyclopediaScreenState createState() => _EncyclopediaScreenState();
 }
@@ -30,10 +33,13 @@ class _EncyclopediaScreenState extends State<EncyclopediaScreen> {
       var string = val.replaceAll("\"", '');
       antek = string.split("\n").map((String text) => text).toList();
     });
+
     return antek;
   }
 
-  Widget projectWidget() {
+  @override
+  Widget build(BuildContext context) {
+    final user = Provider.of<UserData>(context);
     return FutureBuilder(
       builder: (context, projectSnap) {
         if (projectSnap.connectionState == ConnectionState.none &&
@@ -41,8 +47,9 @@ class _EncyclopediaScreenState extends State<EncyclopediaScreen> {
           //print('project snapshot data is: ${projectSnap.data}');
           return Container();
         }
+        print(user.quoteNum);
         return ListView.builder(
-          itemCount: projectSnap.data.length,
+          itemCount: null,
           itemBuilder: (context, index) {
             return QuoteList(
               quote: projectSnap.data[index],
@@ -53,10 +60,4 @@ class _EncyclopediaScreenState extends State<EncyclopediaScreen> {
       future: getQuotes(),
     );
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return projectWidget();
-  }
 }
-

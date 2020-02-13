@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     void _showSettingPanel() {
       showModalBottomSheet(
+        backgroundColor: Colors.brown[300],
           context: context,
           builder: (context) {
             return Container(
